@@ -1,0 +1,73 @@
+package compiladorJava;
+    
+
+import java.util.Scanner;
+
+/**
+ *	Alunos: Daniel e Danilo
+ */
+public class TestandoCompilador {
+	
+	int varInt;
+	private float varFloat;
+	protected static boolean varBoolean = false;
+	public static final String CONSTANTE = "Um texto qualquer que ser� constante";
+	
+	public TestandoCompilador(int valorInt, float valorFloat){
+		varInt = valorInt;
+		varFloat = valorFloat;
+	}
+	
+	private int fibonacci (int val){
+		if(val <= 1) {
+			return 1;
+		}else{
+			return fibonacci (val-1) + fibonacci (val-2);
+		}
+	}
+
+	public static final int somaValores (int x, int y) {
+    	return (x+y);
+	}
+	
+	//Esse  m�todo acaba se tornando in�til, por isso est� comentado
+	/*public String retornaNull(){
+		return null;
+	}*/
+	
+	public static void imprimeFrase(){
+		System.out.println("Estou testando meu compilador em javacc! ");
+	}
+
+	public static void main (String[] args) {
+		
+		boolean valorBoolean = true;
+		
+		imprimeFrase();
+		
+		int subtracao = subtracao(10,5);
+		System.out.println("O resultado da subtra��o �: " + subtracao);
+		
+		int resultado = soma(8,5);
+		System.out.println("O resultado da soma �: " + resultado);
+		
+		System.out.println("Fibonacci para n = 6:  " + fibonacci(6));
+		
+		if (varBooleanLocal) {
+			if (resultado < 10) {
+				System.out.println("O resultado da soma � menor que 10 ! ");
+			}else{
+				if(resultado++ == 10){
+					System.out.println("O resultado da soma � igual a 10 ! ");
+					valorBoolean = !valorBoolean;
+				}
+			}
+		} else {
+			while (resultado < 20) {
+				if(valorBoolean && (resultado != 20)){
+					result += 1;
+				}	
+			}
+		}
+	}
+}
