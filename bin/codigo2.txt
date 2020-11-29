@@ -9,8 +9,39 @@ public class teste {
 	protected boolean booleano = true;
 	public static final String CONST = "String teste";
 	
+	public teste(){
+	
+	}
+	
+	public teste(int inteiro, int resultado, float flutuante, boolean booleano){
+		this.inteiro = inteiro;
+		this.resultado = resultado;
+		this.flutuante = flutuante;
+		this.booleano = booleano;
+		inteiro = inteiro;
+		resultado = resultado;
+		flutuante = flutuante;
+		booleano = booleano;
+	}
+	
 	public testando(int inteiro, int flutuante){
 		inteiro = inteiro;
 		flutuante = flutuante;
+	}
+	
+	public int soma(int a, int b){
+		return a + b;
+	}
+	
+	public static void main(String[] args){
+		int a = 2;
+		int b = 2;
+		int result;
+		
+		result = soma(a,b);
+		
+		if(result>a){
+			System.out.println(result);
+		}
 	}
 }
