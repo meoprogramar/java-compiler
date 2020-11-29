@@ -19,75 +19,75 @@ public interface VerificadorSintaxeConstants {
   /** RegularExpression Id. */
   int CLASS = 14;
   /** RegularExpression Id. */
-  int RETURN = 15;
+  int WHILE = 15;
   /** RegularExpression Id. */
-  int PRINT = 16;
+  int IF = 16;
   /** RegularExpression Id. */
-  int IF = 17;
+  int ELSE = 17;
   /** RegularExpression Id. */
-  int ELSE = 18;
+  int TRUE = 18;
   /** RegularExpression Id. */
-  int WHILE = 19;
+  int FALSE = 19;
   /** RegularExpression Id. */
-  int TRUE = 20;
+  int PRINT = 20;
   /** RegularExpression Id. */
-  int FALSE = 21;
+  int RETURN = 21;
   /** RegularExpression Id. */
-  int STATIC = 22;
+  int INT = 22;
   /** RegularExpression Id. */
-  int PUBLIC = 23;
+  int FLOAT = 23;
   /** RegularExpression Id. */
-  int PROTECTED = 24;
+  int STRING = 24;
   /** RegularExpression Id. */
-  int PRIVATE = 25;
+  int CHAR = 25;
   /** RegularExpression Id. */
-  int FINAL = 26;
+  int BOOLEAN = 26;
   /** RegularExpression Id. */
-  int INT = 27;
+  int VOID = 27;
   /** RegularExpression Id. */
-  int BOOLEAN = 28;
+  int STATIC = 28;
   /** RegularExpression Id. */
-  int CHAR = 29;
+  int PUBLIC = 29;
   /** RegularExpression Id. */
-  int STRING = 30;
+  int PROTECTED = 30;
   /** RegularExpression Id. */
-  int FLOAT = 31;
+  int PRIVATE = 31;
   /** RegularExpression Id. */
-  int VOID = 32;
+  int FINAL = 32;
   /** RegularExpression Id. */
   int AC = 33;
   /** RegularExpression Id. */
   int FC = 34;
   /** RegularExpression Id. */
-  int AP = 35;
+  int AB = 35;
   /** RegularExpression Id. */
-  int FP = 36;
+  int FB = 36;
   /** RegularExpression Id. */
-  int AB = 37;
+  int AP = 37;
   /** RegularExpression Id. */
-  int FB = 38;
+  int FP = 38;
   /** RegularExpression Id. */
   int VIRGULA = 39;
   /** RegularExpression Id. */
-  int PONTO = 40;
+  int PONTO_VIRGULA = 40;
   /** RegularExpression Id. */
-  int PONTO_VIRGULA = 41;
+  int PONTO_ASTERISCO = 41;
   /** RegularExpression Id. */
-  int PONTO_ASTERISCO = 42;
+  int PONTO = 42;
   /** RegularExpression Id. */
   int SOMA = 43;
   /** RegularExpression Id. */
   int SUBTRACAO = 44;
   /** RegularExpression Id. */
-  int MUTIPLICACAO = 45;
+  int DIVISAO = 45;
   /** RegularExpression Id. */
-  int DIVISAO = 46;
+  int MUTIPLICACAO = 46;
   /** RegularExpression Id. */
   int MODULO = 47;
   /** RegularExpression Id. */
-  int SOMA_PLUS = 48;
+  int SUBTRACAO_PLUS = 48;
   /** RegularExpression Id. */
-  int SUBTRACAO_PLUS = 49;
+  int SOMA_PLUS = 49;
   /** RegularExpression Id. */
   int MULTIPLICACAO_PLUS = 50;
   /** RegularExpression Id. */
@@ -95,29 +95,29 @@ public interface VerificadorSintaxeConstants {
   /** RegularExpression Id. */
   int MODULO_PLUS = 52;
   /** RegularExpression Id. */
-  int ATRIBUICAO = 53;
+  int MENOR = 53;
   /** RegularExpression Id. */
-  int INCREMENTO = 54;
+  int MAIOR = 54;
   /** RegularExpression Id. */
-  int DECREMENTO = 55;
+  int MAIOR_IGUAL = 55;
   /** RegularExpression Id. */
-  int IGUALDADE = 56;
+  int MENOR_IGUAL = 56;
   /** RegularExpression Id. */
-  int DIFERENCA = 57;
+  int AND = 57;
   /** RegularExpression Id. */
-  int MENOR = 58;
+  int OR = 58;
   /** RegularExpression Id. */
-  int MAIOR = 59;
+  int NEGACAO = 59;
   /** RegularExpression Id. */
-  int MENOR_IGUAL = 60;
+  int ATRIBUICAO = 60;
   /** RegularExpression Id. */
-  int MAIOR_IGUAL = 61;
+  int DECREMENTO = 61;
   /** RegularExpression Id. */
-  int AND = 62;
+  int INCREMENTO = 62;
   /** RegularExpression Id. */
-  int OR = 63;
+  int DIFERENCA = 63;
   /** RegularExpression Id. */
-  int NEGACAO = 64;
+  int IGUALDADE = 64;
   /** RegularExpression Id. */
   int IDENTIFICADOR = 65;
   /** RegularExpression Id. */
@@ -133,9 +133,9 @@ public interface VerificadorSintaxeConstants {
   /** RegularExpression Id. */
   int EXPONENT = 71;
   /** RegularExpression Id. */
-  int CHARACTER_LITERAL = 72;
+  int STRING_LITERAL = 72;
   /** RegularExpression Id. */
-  int STRING_LITERAL = 73;
+  int CHARACTER_LITERAL = 73;
 
   /** Lexical state. */
   int DEFAULT = 0;
@@ -161,56 +161,56 @@ public interface VerificadorSintaxeConstants {
     "\"import\"",
     "\"package\"",
     "\"class\"",
-    "\"return\"",
-    "\"System.out.println\"",
+    "\"while\"",
     "\"if\"",
     "\"else\"",
-    "\"while\"",
     "\"true\"",
     "\"false\"",
+    "\"System.out.println\"",
+    "\"return\"",
+    "\"int\"",
+    "\"float\"",
+    "\"String\"",
+    "\"char\"",
+    "\"boolean\"",
+    "\"void\"",
     "\"static\"",
     "\"public\"",
     "\"protected\"",
     "\"private\"",
     "\"final\"",
-    "\"int\"",
-    "\"boolean\"",
-    "\"char\"",
-    "\"String\"",
-    "\"float\"",
-    "\"void\"",
     "\"{\"",
     "\"}\"",
-    "\"(\"",
-    "\")\"",
     "\"[\"",
     "\"]\"",
+    "\"(\"",
+    "\")\"",
     "\",\"",
-    "\".\"",
     "\";\"",
     "\".*\"",
+    "\".\"",
     "\"+\"",
     "\"-\"",
-    "\"*\"",
     "\"/\"",
+    "\"*\"",
     "\"%\"",
-    "\"+=\"",
     "\"-=\"",
+    "\"+=\"",
     "\"*=\"",
     "\"/=\"",
     "\"%=\"",
-    "\"=\"",
-    "\"++\"",
-    "\"--\"",
-    "\"==\"",
-    "\"!=\"",
     "\"<\"",
     "\">\"",
-    "\"<=\"",
     "\">=\"",
+    "\"<=\"",
     "\"&&\"",
     "\"||\"",
     "\"!\"",
+    "\"=\"",
+    "\"--\"",
+    "\"++\"",
+    "\"!=\"",
+    "\"==\"",
     "<IDENTIFICADOR>",
     "<LETRA>",
     "<DIGITO>",
@@ -218,8 +218,8 @@ public interface VerificadorSintaxeConstants {
     "<DECIMAL_LITERAL>",
     "<FLOATING_POINT_LITERAL>",
     "<EXPONENT>",
-    "<CHARACTER_LITERAL>",
     "<STRING_LITERAL>",
+    "<CHARACTER_LITERAL>",
     "\"public static void main\"",
   };
 

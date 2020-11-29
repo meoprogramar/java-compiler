@@ -1,11 +1,7 @@
-package compiladorJava;
-    
+package compiladorJava;    
 
 import java.util.Scanner;
 
-/**
- *	Alunos: Daniel e Danilo
- */
 public class TestandoCompilador {
 	
 	int varInt;

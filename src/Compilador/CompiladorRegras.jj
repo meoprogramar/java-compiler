@@ -11,10 +11,9 @@ public class VerificadorSintaxe
 {
   public static void main(String [] args)
   {
-//    System.out.println("Ta funcionando");
     try
     {
-      String programa = Arquivo.Read("src/codigo.txt");
+      String programa = Arquivo.Read("src/codigo2.txt");
       new VerificadorSintaxe(new java.io.StringReader(programa)).INICIO();
       System.out.println("\n\nA sintaxe esta correta!");
     }
@@ -59,13 +58,24 @@ TOKEN :
 | 	< IMPORT : 	"import" > 				{ System.out.println("Palavra reservada: " + image); }
 | 	< PACKAGE : "package" >				{ System.out.println("Palavra reservada: " + image); }
 | 	< CLASS : 	"class" >				{ System.out.println("Palavra reservada: " + image); }
-| 	< RETURN : 	"return" > 				{ System.out.println("Palavra reservada: " + image); }
-| 	< PRINT : 	"System.out.println" > 	{ System.out.println("Palavra reservada: " + image); }
+| 	< WHILE : 	"while" >				{ System.out.println("Palavra reservada: " + image); }
 | 	< IF : 		"if" > 					{ System.out.println("Palavra reservada: " + image); }
 | 	< ELSE : 	"else" > 				{ System.out.println("Palavra reservada: " + image); }
-| 	< WHILE : 	"while" >				{ System.out.println("Palavra reservada: " + image); }
 | 	< TRUE : 	"true" > 				{ System.out.println("Palavra reservada: " + image); }
 | 	< FALSE : 	"false" > 				{ System.out.println("Palavra reservada: " + image); }
+| 	< PRINT : 	"System.out.println" > 	{ System.out.println("Palavra reservada: " + image); }
+| 	< RETURN : 	"return" > 				{ System.out.println("Palavra reservada: " + image); }
+}
+
+// Palavras reservadas - Tipos de dados
+TOKEN :
+{
+  	< INT : 	"int" >		{ System.out.println("Tipo de Dados: " + image); }
+| 	< FLOAT : 	"float" >	{ System.out.println("Tipo de Dados: " + image); }
+| 	< STRING : 	"String" >	{ System.out.println("Tipo de Dados: " + image); }
+| 	< CHAR : 	"char" >	{ System.out.println("Tipo de Dados: " + image); }
+| 	< BOOLEAN : "boolean" >	{ System.out.println("Tipo de Dados: " + image); }
+| 	< VOID : 	"void" >	{ System.out.println("Tipo de Dados: " + image); }
 }
 
 // Palavras reservadas - Modificadores de acesso
@@ -78,30 +88,20 @@ TOKEN :
 | 	< FINAL : 		"final" >		{ System.out.println("Modificador de acesso: " + image); }
 }
 
-// Palavras reservadas - Tipos de dados
-TOKEN :
-{
-  	< INT : 	"int" >		{ System.out.println("Tipo de Dados: " + image); }
-| 	< BOOLEAN : "boolean" >	{ System.out.println("Tipo de Dados: " + image); }
-| 	< CHAR : 	"char" >	{ System.out.println("Tipo de Dados: " + image); }
-| 	< STRING : 	"String" >	{ System.out.println("Tipo de Dados: " + image); }
-| 	< FLOAT : 	"float" >	{ System.out.println("Tipo de Dados: " + image); }
-| 	< VOID : 	"void" >	{ System.out.println("Tipo de Dados: " + image); }
-}
 
 // Palavras reservadas - Separadores
 TOKEN :
 {
   	< AC : 				"{" >	{ System.out.println("Separador: " + image); }
 | 	< FC : 				"}" >	{ System.out.println("Separador: " + image); }
-| 	< AP : 				"(" >	{ System.out.println("Separador: " + image); }
-| 	< FP : 				")" >	{ System.out.println("Separador: " + image); }
 | 	< AB : 				"[" >	{ System.out.println("Separador: " + image); }
 | 	< FB : 				"]" >	{ System.out.println("Separador: " + image); }
+| 	< AP : 				"(" >	{ System.out.println("Separador: " + image); }
+| 	< FP : 				")" >	{ System.out.println("Separador: " + image); }
 | 	< VIRGULA : 		"," >	{ System.out.println("Separador: " + image); }
-| 	< PONTO : 			"." >	{ System.out.println("Separador: " + image); }
 | 	< PONTO_VIRGULA : 	";" >	{ System.out.println("Separador: " + image); }
 | 	< PONTO_ASTERISCO : ".*" >	{ System.out.println("Separador: " + image); }
+| 	< PONTO : 			"." >	{ System.out.println("Separador: " + image); }
 }
 
 // Palavras reservadas - Operadores aritmeticos
@@ -109,80 +109,45 @@ TOKEN :
 {
   	< SOMA : 				"+" >	{ System.out.println("Operador aritmetico: " + image); }
 | 	< SUBTRACAO : 			"-" >	{ System.out.println("Operador aritmetico: " + image); }
-| 	< MUTIPLICACAO : 		"*" >	{ System.out.println("Operador aritmetico: " + image); }
 | 	< DIVISAO : 			"/" >	{ System.out.println("Operador aritmetico: " + image); }
+| 	< MUTIPLICACAO : 		"*" >	{ System.out.println("Operador aritmetico: " + image); }
 | 	< MODULO : 				"%" >	{ System.out.println("Operador aritmetico: " + image); }
-| 	< SOMA_PLUS : 			"+=" >	{ System.out.println("Operador aritmetico: " + image); }
 | 	< SUBTRACAO_PLUS : 		"-=" >	{ System.out.println("Operador aritmetico: " + image); }
+| 	< SOMA_PLUS : 			"+=" >	{ System.out.println("Operador aritmetico: " + image); }
 | 	< MULTIPLICACAO_PLUS : 	"*=" >	{ System.out.println("Operador aritmetico: " + image); }
 | 	< DIVISAO_PLUS : 		"/=" >	{ System.out.println("Operador aritmetico: " + image); }
 | 	< MODULO_PLUS : 		"%=" >	{ System.out.println("Operador aritmetico: " + image); }
 }
 
-// Operadores - Outros
+// Palavras reservadas - Operadores relacionais
 TOKEN :
 {
-  < ATRIBUICAO : "=" >			
-  {
-    System.out.println("\nOperador de Atribui\u00e7\u00e3o: " + image);
-  }
-| 	< INCREMENTO : "++" >			
-  {
-    System.out.println("\nOperador de Incremento: " + image);
-  }
-| 	< DECREMENTO : "--" >			
-  {
-    System.out.println("\nOperador de Decremento: " + image);
-  }
-| 	< IGUALDADE : "==" >			
-  {
-    System.out.println("\nOperador de Igualdade: " + image);
-  }
-| 	< DIFERENCA : "!=" >			
-  {
-    System.out.println("\nOperador de Diferen\u00e7a: " + image);
-  }
+  	< MENOR : "<" >			{ System.out.println("Operador relacional: " + image); }
+| 	< MAIOR : ">" >			{ System.out.println("Operador relacional: " + image); }
+| 	< MAIOR_IGUAL : ">=" >	{ System.out.println("Operador relacional: " + image); }
+| 	< MENOR_IGUAL : "<=" >	{ System.out.println("Operador relacional: " + image); }
 }
 
-// Operadores relacionais
+// Palavras reservadas - Operadores logicos
 TOKEN :
 {
-  < MENOR : "<" >				
-  {
-    System.out.println("\nOperador Relacional: " + image);
-  }
-| 	< MAIOR : ">" >				
-  {
-    System.out.println("\nOperador Relacional: " + image);
-  }
-| 	< MENOR_IGUAL : "<=" >			
-  {
-    System.out.println("\nOperador Relacional: " + image);
-  }
-| 	< MAIOR_IGUAL : ">=" >			
-  {
-    System.out.println("\nOperador Relacional: " + image);
-  }
+  	< AND : "&&" >		{ System.out.println("Operador logico: " + image); }
+| 	< OR : "||" >		{ System.out.println("Operador logico: " + image); }
+| 	< NEGACAO : "!" >	{ System.out.println("Operador logico: " + image); }
 }
 
-// Operadores logicos
+// Palavras reservadas - Outros operadores
 TOKEN :
 {
-  < AND : "&&" >					
-  {
-    System.out.println("\nOperador l\u00f3gico: " + image);
-  }
-| 	< OR : "||" >					
-  {
-    System.out.println("\nOperador l\u00f3gico: " + image);
-  }
-| 	< NEGACAO : "!" >				
-  {
-    System.out.println("\nOperador l\u00f3gico: " + image);
-  }
+  	< ATRIBUICAO : "=" >	{ System.out.println("Outros operadores: " + image); }
+| 	< DECREMENTO : "--" >	{ System.out.println("Outros operadores: " + image); }
+| 	< INCREMENTO : "++" >	{ System.out.println("Outros operadores: " + image); }
+| 	< DIFERENCA : "!=" >	{ System.out.println("Outros operadores: " + image); }
+| 	< IGUALDADE : "==" >	{ System.out.println("Outros operadores: " + image); }
 }
 
-// Identificador
+
+// Identificadores
 TOKEN :
 {
   < IDENTIFICADOR :
@@ -192,48 +157,22 @@ TOKEN :
     | < DIGITO >
     | "_"
     | "$"
-    )* >		
-  {
-    System.out.println("\nIdentificador: " + image);
-  }
+    )* > { System.out.println("Identificador: " + image); }
 | 	< #LETRA : ([ "a"-"z", "A"-"Z" ]) >
 | 	< #DIGITO : [ "0"-"9" ] >
 }
 
+// Literais
 TOKEN :
 {
-  < INTEGER_LITERAL : < DECIMAL_LITERAL > ([ "l", "L" ])? >		
-  {
-    System.out.println("Literal Inteiro: " + image);
-  }
+  < INTEGER_LITERAL : < DECIMAL_LITERAL > ([ "l", "L" ])? >	{ System.out.println("Literal inteiro: " + image); }
 | < #DECIMAL_LITERAL : [ "0"-"9" ] ([ "0"-"9" ])* >
 | < FLOATING_POINT_LITERAL :
     ([ "0"-"9" ])+ "." ([ "0"-"9" ])* (< EXPONENT >)? ([ "f", "F", "d", "D" ])?
   | "." ([ "0"-"9" ])+ (< EXPONENT >)? ([ "f", "F", "d", "D" ])?
   | ([ "0"-"9" ])+ < EXPONENT > ([ "f", "F", "d", "D" ])?
-  | ([ "0"-"9" ])+ (< EXPONENT >)? [ "f", "F", "d", "D" ] >			
-  {
-    System.out.println("\nLiteral Ponto Flutuante: " + image);
-  }
+  | ([ "0"-"9" ])+ (< EXPONENT >)? [ "f", "F", "d", "D" ] >	{ System.out.println("Literal ponto flutuante: " + image); }
 | < #EXPONENT : [ "e", "E" ] ([ "+", "-" ])? ([ "0"-"9" ])+ >
-| < CHARACTER_LITERAL :
-    "'"
-    (
-      (~[ "'", "\\", "\n", "\r" ])
-    |
-      (
-        "\\"
-        (
-          [ "n", "t", "b", "r", "f", "\\", "'", "\"" ]
-        | [ "0"-"7" ] ([ "0"-"7" ])?
-        | [ "0"-"3" ] [ "0"-"7" ] [ "0"-"7" ]
-        )
-      )
-    )
-    "'" >				
-  {
-    System.out.println("\nLiteral Char: " + image);
-  }
 | < STRING_LITERAL :
     "\""
     (
@@ -248,14 +187,26 @@ TOKEN :
         )
       )
     )*
-    "\"" >				
-  {
-    System.out.println("\nLiteral String: " + image);
-  }
+    "\"" >	{ System.out.println("Literal string: " + image); }
+| < CHARACTER_LITERAL :
+    "'"
+    (
+      (~[ "'", "\\", "\n", "\r" ])
+    |
+      (
+        "\\"
+        (
+          [ "n", "t", "b", "r", "f", "\\", "'", "\"" ]
+        | [ "0"-"7" ] ([ "0"-"7" ])?
+        | [ "0"-"3" ] [ "0"-"7" ] [ "0"-"7" ]
+        )
+      )
+    )
+    "'" >	{ System.out.println("Literal char: " + image); }
 }
 
 /* 
-* Gramatica da linguagem
+* Gramatica da linguagem - Java
 */
 
 void INICIO() :
@@ -267,14 +218,14 @@ void INICIO() :
 void Programa() :
 {}
 {
-  [ PacoteDeclaracao() ]
+  [ DeclaracaoPacote() ]
   (
-    ImportDeclaracao()
+    DeclaracaoImport()
   )*
-  ClasseDeclaracao()
+  DeclaracaoClasse()
 }
 
-void PacoteDeclaracao() :
+void DeclaracaoPacote() :
 {}
 {
   "package" < IDENTIFICADOR >
@@ -284,7 +235,7 @@ void PacoteDeclaracao() :
   ";"
 }
 
-void ImportDeclaracao() :
+void DeclaracaoImport() :
 {}
 {
   "import" < IDENTIFICADOR >
@@ -300,7 +251,7 @@ void DeclaracaoEstendida() :
   "." < IDENTIFICADOR >
 }
 
-void ClasseDeclaracao() :
+void DeclaracaoClasse() :
 {}
 {
   Modificador() [ < FINAL > ] < CLASS > < IDENTIFICADOR > "{" CorpoClasse() "}"
@@ -313,95 +264,126 @@ void CorpoClasse() :
     (
       [ Modificador() ]
       (
-        [ < STATIC > ] [ < FINAL > ] TipoDeDados() < IDENTIFICADOR >
+        [ < STATIC > ] [ < FINAL > ] TiposDados() < IDENTIFICADOR >
         (
-          VariavelDeclaracao()
-        | MetodoDeclaracao()
+          DeclaracaoVariavel()
+        | DeclaracaoMetodo()
         )
-      | ConstrutorDeclaracao()
+      | DeclaracaoConstrutor()
       )
     )
   | Main()
   )*
 }
 
-void VariavelDeclaracao() :
-{}
-{
-  InicializaVariavel()
-  (
-    "," < IDENTIFICADOR > InicializaVariavel()
-  )*
-  ";"
-}
-
-void InicializaVariavel() :
-{}
-{
-  [ "=" OpcoesInicializacao() ]
-}
-
-void MetodoDeclaracao() :
-{}
-{
-  "(" [ ListaDeParametros() ] ")" BlocoDeDeclaracoes()
-}
-
 void Main() :
 {}
 {
-  "public static void main" "(" < STRING > "[" "]" < IDENTIFICADOR > ")" BlocoDeDeclaracoes()
+  "public static void main" "(" < STRING > "[" "]" < IDENTIFICADOR > ")" DeclaracaoBloco()
 }
 
-void ConstrutorDeclaracao() :
+void Modificador() :
 {}
 {
-  < IDENTIFICADOR > "(" [ ListaDeParametros() ] ")" BlocoDeDeclaracoes()
+  "private"
+| "protected"
+| "public"
 }
 
-void ListaDeParametros() :
+void TiposDados() :
 {}
 {
-  Parametro()
-  (
-    "," Parametro()
-  )*
+  "int"
+| "float"
+| "String"
+| "char"
+| "boolean"
+| "void"
 }
 
-void Parametro() :
-{}
-{
-  TipoDeDados() < IDENTIFICADOR >
-}
-
-void BlocoDeDeclaracoes() :
+void DeclaracaoBloco() :
 {}
 {
   "{"
   (
-    CorpoDaDeclaracao()
+    DeclaracaoCorpo()
   )*
   "}"
 }
 
-void CorpoDaDeclaracao() :
+void DeclaracaoCorpo() :
 {}
 {
-  TipoDeDados() < IDENTIFICADOR > VariavelDeclaracao()
-| < RETURN > [ OpcoesRetorno() ] ";"
-| If_Else()
+  TiposDados() < IDENTIFICADOR > DeclaracaoVariavel()
+| < RETURN > [ RetornoOpcoes() ] ";"
+| IfElse()
 | Print()
 | While()
 | Expressao() ";"
 }
 
-void ExpressaoLiteral() :
+void DeclaracaoMetodo() :
 {}
 {
-  < INTEGER_LITERAL >
-| < FLOATING_POINT_LITERAL >
-| < CHARACTER_LITERAL >
-| < STRING_LITERAL >
+  "(" [ ListaParametros() ] ")" DeclaracaoBloco()
+}
+
+void DeclaracaoConstrutor() :
+{}
+{
+  < IDENTIFICADOR > "(" [ ListaParametros() ] ")" DeclaracaoBloco()
+}
+
+void DeclaracaoVariavel() :
+{}
+{
+  InicializacaoVariavel()
+  (
+    "," < IDENTIFICADOR > InicializacaoVariavel()
+  )*
+  ";"
+}
+
+void InicializacaoVariavel() :
+{}
+{
+  [ "=" InicializacaoOpcoes() ]
+}
+
+void InicializacaoOpcoes() :
+{}
+{
+  (
+    Expressao()
+  | < NULL >
+  | < TRUE >
+  | < FALSE >
+  )
+}
+
+void RetornoOpcoes() :
+{}
+{
+  InicializacaoOpcoes()
+| TiposDados()
+}
+
+void IfElse() :
+{}
+{
+  < IF > "(" Expressao() ")" DeclaracaoBloco() [ < ELSE > DeclaracaoBloco() ]
+}
+
+void Print() :
+{}
+{
+  < PRINT > "(" Expressao() ")" ";"
+}
+
+void While() :
+{}
+{
+  < WHILE > "(" Expressao() ")" DeclaracaoBloco()
 }
 
 void Expressao() :
@@ -412,7 +394,7 @@ void Expressao() :
     (
       < IDENTIFICADOR >
       [
-        ChamadaDeMetodo()
+        ChamadaMetodo()
       | < INCREMENTO >
       | < DECREMENTO >
       ]
@@ -424,23 +406,41 @@ void Expressao() :
     | ComparacaoRelacional()
     | ExpressaoNumerica()
     ]
-  | "(" Expressao() ")"
+  	| "(" Expressao() ")"
   )
 }
 
-void ChamadaDeMetodo() :
+void ChamadaMetodo() :
 {}
 {
-  "(" [ ListaDeArgumentos() ] ")"
+  "(" [ ListaArgumentos() ] ")"
 }
 
-void ListaDeArgumentos() :
+void ListaArgumentos() :
 {}
 {
   Expressao()
   (
     "," Expressao()
   )*
+}
+
+void ListaParametros() :
+{}
+{
+  Parametro()
+  (
+    "," Parametro()
+  )*
+}
+
+void ExpressaoLiteral() :
+{}
+{
+  < INTEGER_LITERAL >
+| < FLOATING_POINT_LITERAL >
+| < CHARACTER_LITERAL >
+| < STRING_LITERAL >
 }
 
 void Atribuicao() :
@@ -491,57 +491,8 @@ void ExpressaoNumerica() :
   Expressao()
 }
 
-void If_Else() :
+void Parametro() :
 {}
 {
-  < IF > "(" Expressao() ")" BlocoDeDeclaracoes() [ < ELSE > BlocoDeDeclaracoes() ]
+  TiposDados() < IDENTIFICADOR >
 }
-
-void Print() :
-{}
-{
-  < PRINT > "(" Expressao() ")" ";"
-}
-
-void While() :
-{}
-{
-  < WHILE > "(" Expressao() ")" BlocoDeDeclaracoes()
-}
-
-void OpcoesInicializacao() :
-{}
-{
-  (
-    Expressao()
-  | < NULL >
-  | < TRUE >
-  | < FALSE >
-  )
-}
-
-void OpcoesRetorno() :
-{}
-{
-  OpcoesInicializacao()
-}
-
-void Modificador() :
-{}
-{
-  "private"
-| "protected"
-| "public"
-}
-
-void TipoDeDados() :
-{}
-{
-  "int"
-| "float"
-| "String"
-| "char"
-| "boolean"
-| "void"
-}
-
