@@ -13,7 +13,7 @@ public class VerificadorSintaxe
   {
     try
     {
-      String programa = Arquivo.Read("src/codigo2.txt");
+      String programa = ReadFile.Read("src/codigo.txt");
       new VerificadorSintaxe(new java.io.StringReader(programa)).INICIO();
       System.out.println("\n\nA sintaxe esta correta!");
     }

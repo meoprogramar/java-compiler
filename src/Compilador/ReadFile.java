@@ -11,7 +11,7 @@ import java.io.IOException;
  * 
  * Alunos: Daniel, Danilo
  */
-public class Arquivo {
+public class ReadFile {
 
 	/**
 	 * Realiza a leitura do conte�do de um arquivo de texto.

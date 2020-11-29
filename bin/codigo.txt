@@ -1,69 +1,84 @@
-package compiladorJava;    
+package teste;    
 
 import java.util.Scanner;
 
-public class TestandoCompilador {
+public class teste {
+	int inteiro;
+	int resultado;
+	private float flutuante;	
+	protected boolean booleano = true;
+	public static final String CONST = "String teste";
 	
-	int varInt;
-	private float varFloat;
-	protected static boolean varBoolean = false;
-	public static final String CONSTANTE = "Um texto qualquer que ser� constante";
-	
-	public TestandoCompilador(int valorInt, float valorFloat){
-		varInt = valorInt;
-		varFloat = valorFloat;
+	public testando(int inteiro, int flutuante){
+		inteiro = inteiro;
+		flutuante = flutuante;
 	}
 	
-	private int fibonacci (int val){
-		if(val <= 1) {
+	private int antecessor(int valor){
+		if(valor <= 1){
 			return 1;
-		}else{
-			return fibonacci (val-1) + fibonacci (val-2);
+		} else {
+			return antecessor(valor-1);
 		}
 	}
-
-	public static final int somaValores (int x, int y) {
-    	return (x+y);
+	
+	private int predecessor(int valor){
+		if(valor <= 1){
+			return 1;
+		} else {
+			return predecessor(valor+1);
+		}
 	}
 	
-	//Esse  m�todo acaba se tornando in�til, por isso est� comentado
-	/*public String retornaNull(){
-		return null;
-	}*/
-	
-	public static void imprimeFrase(){
-		System.out.println("Estou testando meu compilador em javacc! ");
+	public int somarValores(int a, int b){
+		return (a+b);
 	}
-
-	public static void main (String[] args) {
+	
+	public int subtrairValores(int a, int b){
+		return (a-b);
+	}
+	
+	public int multiplicarValores(int a, int b){
+		return (a*b);
+	}
+	
+	public void exibirMensagem(String mensagem){
+		System.out.println(mensagem);
+	}
+	
+	public static void main(String[] args){
+		boolean booleano = true;
 		
-		boolean valorBoolean = true;
+		exibirMensagem("Teste");
 		
-		imprimeFrase();
+		int soma = somandoValores(123, 33);
+		System.out.println("O resultado é: "+soma);
 		
-		int subtracao = subtracao(10,5);
-		System.out.println("O resultado da subtra��o �: " + subtracao);
+		int subtracao = subtrairValores(123, 33);
+		System.out.println("O resultado é: "+subtracao);
 		
-		int resultado = soma(8,5);
-		System.out.println("O resultado da soma �: " + resultado);
+		int multiplicacao = multiplicarValores(123, 33);
+		System.out.println("O resultado é: "+multiplicacao);
 		
-		System.out.println("Fibonacci para n = 6:  " + fibonacci(6));
+		System.out.println("Antecessor de 100 é "+antecessor(100));
 		
-		if (varBooleanLocal) {
-			if (resultado < 10) {
-				System.out.println("O resultado da soma � menor que 10 ! ");
-			}else{
-				if(resultado++ == 10){
-					System.out.println("O resultado da soma � igual a 10 ! ");
-					valorBoolean = !valorBoolean;
+		System.out.println("Predecessor de 100 é "+predecessor(100));
+		
+		if(booleano){
+			if(soma < 10){
+				System.out.println("O resultado da soma é maior que 10!");
+			} else {
+				if(soma++ == 10){				
+					System.out.println("O resultado da soma é igual a 10!");
+					booleano = !booleano;
 				}
 			}
 		} else {
-			while (resultado < 20) {
-				if(valorBoolean && (resultado != 20)){
-					result += 1;
-				}	
+			while(soma = 20 && b < 5){
+				if(booleano && (soma != 20)){
+					return result += 1;
+				}
 			}
 		}
-	}
+	}	
 }
