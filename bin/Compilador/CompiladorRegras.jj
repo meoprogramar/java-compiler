@@ -269,7 +269,6 @@ void CorpoClasse() :
           DeclaracaoVariavel()
         | DeclaracaoMetodo()
         )
-      | DeclaracaoConstrutor()
       )
     )
   | Main()
@@ -326,12 +325,6 @@ void DeclaracaoMetodo() :
 {}
 {
   "(" [ ListaParametros() ] ")" DeclaracaoBloco()
-}
-
-void DeclaracaoConstrutor() :
-{}
-{
-  < IDENTIFICADOR > "(" [ ListaParametros() ] ")" DeclaracaoBloco()
 }
 
 void DeclaracaoVariavel() :
@@ -494,5 +487,5 @@ void ExpressaoNumerica() :
 void Parametro() :
 {}
 {
-  TiposDados() < IDENTIFICADOR >
+  [ Modificador() ] TiposDados() < IDENTIFICADOR >
 }

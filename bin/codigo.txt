@@ -8,7 +8,7 @@ public class teste {
 	private float flutuante;	
 	protected boolean booleano = true;
 	public static final String CONST = "String teste";
-	
+		
 	public testando(int inteiro, int flutuante){
 		inteiro = inteiro;
 		flutuante = flutuante;
@@ -19,6 +19,14 @@ public class teste {
 			return 1;
 		} else {
 			return antecessor(valor-1);
+		}
+		
+		if(valor <= 1){
+			if(valor == 0){
+				System.out.println(valor);  
+			} else{
+				System.out.println(1); 
+			}
 		}
 	}
 	
@@ -52,24 +60,24 @@ public class teste {
 		exibirMensagem("Teste");
 		
 		int soma = somandoValores(123, 33);
-		System.out.println("O resultado é: "+soma);
+		System.out.println("O resultado eh: "+soma);
 		
 		int subtracao = subtrairValores(123, 33);
-		System.out.println("O resultado é: "+subtracao);
+		System.out.println("O resultado eh: "+subtracao);
 		
 		int multiplicacao = multiplicarValores(123, 33);
-		System.out.println("O resultado é: "+multiplicacao);
+		System.out.println("O resultado eh: "+multiplicacao);
 		
-		System.out.println("Antecessor de 100 é "+antecessor(100));
+		System.out.println("Antecessor de 100 eh: "+antecessor(100));
 		
-		System.out.println("Predecessor de 100 é "+predecessor(100));
+		System.out.println("Predecessor de 100 eh: "+predecessor(100));
 		
 		if(booleano){
 			if(soma < 10){
-				System.out.println("O resultado da soma é maior que 10!");
+				System.out.println("O resultado da soma eh maior que 10!");
 			} else {
 				if(soma++ == 10){				
-					System.out.println("O resultado da soma é igual a 10!");
+					System.out.println("O resultado da soma eh igual a 10!");
 					booleano = !booleano;
 				}
 			}
