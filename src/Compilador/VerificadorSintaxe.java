@@ -6,7 +6,7 @@ public class VerificadorSintaxe implements VerificadorSintaxeConstants {
   {
     try
     {
-      String programa = Arquivo.Read("src/codigo2.txt");
+      String programa = ReadFile.Read("src/codigo.txt");
       new VerificadorSintaxe(new java.io.StringReader(programa)).INICIO();
       System.out.println("\u005cn\u005cnA sintaxe esta correta!");
     }
