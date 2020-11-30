@@ -65,8 +65,6 @@ TOKEN :
 | 	< FALSE : 	"false" > 				{ System.out.println("Palavra reservada: " + image); }
 | 	< PRINT : 	"System.out.println" > 	{ System.out.println("Palavra reservada: " + image); }
 | 	< RETURN : 	"return" > 				{ System.out.println("Palavra reservada: " + image); }
-| 	< THIS : 	"this" >				{ System.out.println("Palavra reservada: " + image); }
-| 	< SUPER : 	"super" >				{ System.out.println("Palavra reservada: " + image); }
 }
 
 // Palavras reservadas - Tipos de dados
@@ -148,14 +146,6 @@ TOKEN :
 | 	< IGUALDADE : "==" >	{ System.out.println("Outros operadores: " + image); }
 }
 
-// Palavras reservadas para o construtor
-TOKEN :
-{
-  < CONSTRUTOR :
-  	(  	  < SUPER > "(" ")"
-  	| < THIS > "." < IDENTIFICADOR >
- 	)*
- }
 
 // Identificadores
 TOKEN :
@@ -343,16 +333,6 @@ void DeclaracaoConstrutor() :
 {
   < IDENTIFICADOR > "(" [ ListaParametros() ] ")" DeclaracaoBloco()
 }
-
-void CorpoConstrutor():
-{}
-{
-  DeclaracaoCorpo()
-  (
-    < SUPER > "(" [ ListaParametros() ] ")"  | < THIS > < IDENTIFICADOR > "=" < IDENTIFICADOR >
-  )*
-  ";"
-}  
 
 void DeclaracaoVariavel() :
 {}
